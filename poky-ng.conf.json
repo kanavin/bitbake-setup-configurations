@@ -1,0 +1,59 @@
+{
+    "sources": {
+        "bitbake": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.openembedded.org/bitbake"
+                    }
+                },
+                "rev": "master"
+            },
+            "path": "bitbake"
+        },
+        "openembedded-core": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.openembedded.org/openembedded-core"
+                    }
+                },
+                "rev": "master"
+            },
+            "path": "openembedded-core"
+        },
+        "meta-yocto": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.yoctoproject.org/meta-yocto"
+                    }
+                },
+                "rev": "master"
+            },
+            "path": "meta-yocto"
+        },
+        "yocto-docs": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.yoctoproject.org/yocto-docs"
+                    }
+                },
+                "rev": "master"
+            },
+            "path": "yocto-docs"
+        }
+    },
+    "description": "Poky-ng configuration: like poky but built from individual repositories",
+    "bitbake-setup": {
+        "configuration": {
+            "default": {
+                "description": "Default build configuration",
+                "oe-template": "meta-default",
+                "targets": ["bitbake core-image-minimal"]
+            }
+        }
+    },
+    "version": "1.0"
+}
