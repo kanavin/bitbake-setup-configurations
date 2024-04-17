@@ -1,0 +1,26 @@
+{
+    "sources": {
+        "poky": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.yoctoproject.org/poky"
+                    }
+                },
+                "rev": "kirkstone"
+            },
+            "path": "poky"
+        }
+    },
+    "description": "Poky reference distribution, kirkstone long term support release (supported until April 2026)",
+    "configuration": {
+        "bitbake-setup": {
+            "default": {
+                "description": "Default build configuration",
+                "oe-template": "poky-default",
+                "targets": ["bitbake core-image-minimal"]
+            }
+        }
+    },
+    "version": "1.0"
+}
