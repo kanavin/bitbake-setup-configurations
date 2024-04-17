@@ -1,0 +1,26 @@
+{
+    "sources": {
+        "poky": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.yoctoproject.org/poky-contrib"
+                    }
+                },
+                "rev": "akanavin/sstate-for-all"
+            },
+            "path": "poky"
+        }
+    },
+    "description": "Poky reference distribution, with alex fixes",
+    "configuration": {
+        "bitbake-setup": {
+            "default": {
+                "description": "Default build configuration",
+	        "template": "poky-default",
+	        "targets": ["bitbake core-image-minimal"]
+            }
+        }
+    },
+    "version": "1.0"
+}
