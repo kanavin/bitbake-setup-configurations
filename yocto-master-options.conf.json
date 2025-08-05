@@ -1,0 +1,70 @@
+{
+    "description": "(future) Official Yocto configurations: poky, poky-altcfg, poky-tiny, for qemux86-64, riscv64 and arm64 (defined with options)",
+    "sources": {
+        "bitbake": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.openembedded.org/bitbake"
+                    }
+                },
+                "rev": "master"
+            },
+            "path": "bitbake"
+        },
+        "openembedded-core": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.openembedded.org/openembedded-core"
+                    }
+                },
+                "rev": "master"
+            },
+            "path": "openembedded-core"
+        },
+        "meta-yocto": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.yoctoproject.org/meta-yocto"
+                    }
+                },
+                "rev": "master"
+            },
+            "path": "meta-yocto"
+        },
+        "yocto-docs": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.yoctoproject.org/yocto-docs"
+                    }
+                },
+                "rev": "master"
+            },
+            "path": "yocto-docs"
+        }
+    },
+    "bitbake-setup": {
+        "configurations": [
+        {
+            "name": "poky",
+            "description": "Poky reference distro build",
+            "bb-layers": ["openembedded-core/meta","meta-yocto/meta-yocto-bsp","meta-yocto/meta-poky"],
+            "oe-fragments": ["core/yocto/sstate-mirror-cdn"],
+            "oe-fragments-one-of": {
+                "machine": {
+                    "description": "Available target machines",
+                    "options" : ["machine/qemux86-64", "machine/qemuarm64", "machine/qemuriscv64"]
+                },
+                "distro": {
+                    "description": "Available distributions",
+                    "options" : ["distro/poky", "distro/poky-altcfg", "distro/poky-tiny"]
+                }
+            }
+        }
+        ]
+    },
+    "version": "1.0"
+}

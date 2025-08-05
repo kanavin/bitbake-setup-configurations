@@ -1,0 +1,46 @@
+{
+    "description": "Yocto source overlay that provides master-next instead of master",
+    "sources": {
+        "bitbake": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.openembedded.org/bitbake"
+                    }
+                },
+                "rev": "master-next"
+            }
+        },
+        "openembedded-core": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.openembedded.org/openembedded-core"
+                    }
+                },
+                "rev": "master-next"
+            }
+        },
+        "meta-yocto": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.yoctoproject.org/meta-yocto"
+                    }
+                },
+                "rev": "master-next"
+            }
+        },
+        "yocto-docs": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "git://git.yoctoproject.org/yocto-docs"
+                    }
+                },
+                "rev": "master-next"
+            }
+        }
+    },
+    "version": "1.0"
+}
